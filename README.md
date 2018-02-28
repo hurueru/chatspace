@@ -4,7 +4,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id    |integer|       |
 |name  |string|index: true, null:  false, unique: true|
 |mail  |string|null: false|
 
@@ -17,7 +16,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id    |integer|foreign_key: true|
 |name  |string|null: false, unique: true|
 
 ### Association
