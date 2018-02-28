@@ -1,36 +1,35 @@
-# README
+# DB設計
 
-## usersテーブル
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
 |id    |integer|       |
-|name  |string|null:  false|
-|email |text|unique: true|
-|password|text|unqiue:  true|
+|name  |string|index: true, null:  false, unique: true|
+|mail  |string|null: false|
 
 ### Association
 - has_many :groups
 - has_many :messages
 
-## groupsテーブル
+
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
 |id    |integer|foreign_key: true|
-|name  |string|null: false|
-|user  |string|null: false|
-|message|text|      |
+|name  |string|null: false, unique: true|
 
 ### Association
 - belongs_to :message
 - has_many :users
 
-## messagesテーブル
+
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
-|body  |text|null: false|
+|body  |text|       |
 |image |string|       |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -39,15 +38,16 @@
 - belongs_to :group
 - belongs_to :user
 
-## membersテーブル
+
+## members table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|through|
-|group_id|integer|through|
+|user_id|integer|null: false, foreign_key: true, through|
+|group_id|integer|null: false, foreign_key: true, through|
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :group
+- belongs_to :user
 
 
