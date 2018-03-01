@@ -1,0 +1,34 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{chatset: "utf-8"}
+    / = link_to rel="stylesheet" href="application.scss"
+  %body
+    / %title{Chatspace}
+    /   = link _to rel="stylesheet" href="application.scss"
+
+    %div{class: "wrapper"}
+      %div{class: "side-bar"}
+        %div{class: "header"}
+          %h3{class: "header__name"}
+          %ul{class: "header__lists"}
+            %li{class: "list"}
+              %a {href="/groups/new"}
+            %li {list}
+              %
+        %div {groups}
+
+      %chat
+        %div {notice}
+        %header {class="header"}
+          %div {class="left-header"}
+            %div {left-header__title}
+              %ul {left-header__members}
+                %li {.member}
+
+        %div {class="contents"}
+           {messages js-messages}
+          %div {class="left-content"}
+          %div {class="right-content"}
+
+        %footer {class="footer"}

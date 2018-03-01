@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "vBqRv4om1tvcQ/1QF0HfCL1aYDsgBsDpSA+0xZoD3CKhVFTX44402TEwqPQ4BPeviEc7SxqXYkeEQ6dzHJA1kg==>", :name => "csrf-token"}/
+    %link{"data-turbolinks-track" => "reload", :href => "application.scss", :media => "all", :rel => "stylesheet"}/
+  %body
+    %p
+      "&gt;
+      %script{:async => "", :charset => "utf-8", :defer => "defer", :src => "/javascripts/application.js", :type => "text/javascript"}
+    .notification
+      .notice チャットグループが作成されました。
+    .wrapper
+      .side-ber
+        .header
+          %h3.header__name
+            Sample
+          %ul.header__lists
+            %li.list
+              %a{:href => "/groups/new"}
+                %i.fa.fa-pencill-square-o.icon
+                  \::before
+            %li.list
+              %a{:href => "/users/4352/edit"}
+                %i.fa.fa-cog.icon
+                  \::before
+        .groups
+          .group
+            %a{:href => "/groups/11172/messages"}
+              .group__name
+                サンプル
+              .group__message
+                よろしくお願いします
+      / ここからchatのところ
+      .chat
+        %div
