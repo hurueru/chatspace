@@ -1,34 +1,38 @@
 !!!
-%html{lang: "ja"}
+%html
   %head
-    %meta{chatset: "utf-8"}
-    / = link_to rel="stylesheet" href="application.scss"
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "vBqRv4om1tvcQ/1QF0HfCL1aYDsgBsDpSA+0xZoD3CKhVFTX44402TEwqPQ4BPeviEc7SxqXYkeEQ6dzHJA1kg==>", :name => "csrf-token"}/
+    %link{"data-turbolinks-track" => "reload", :href => "application.scss", :media => "all", :rel => "stylesheet"}/
   %body
-    / %title{Chatspace}
-    /   = link _to rel="stylesheet" href="application.scss"
-
-    %div{class: "wrapper"}
-      %div{class: "side-bar"}
-        %div{class: "header"}
-          %h3{class: "header__name"}
-          %ul{class: "header__lists"}
-            %li{class: "list"}
-              %a {href="/groups/new"}
-            %li {list}
-              %
-        %div {groups}
-
-      %chat
-        %div {notice}
-        %header {class="header"}
-          %div {class="left-header"}
-            %div {left-header__title}
-              %ul {left-header__members}
-                %li {.member}
-
-        %div {class="contents"}
-           {messages js-messages}
-          %div {class="left-content"}
-          %div {class="right-content"}
-
-        %footer {class="footer"}
+    %p
+      "&gt;
+      %script{:async => "", :charset => "utf-8", :defer => "defer", :src => "/javascripts/application.js", :type => "text/javascript"}
+    .notification
+      .notice チャットグループが作成されました。
+    .wrapper
+      .side-ber
+        .header
+          %h3.header__name
+            Sample
+          %ul.header__lists
+            %li.list
+              %a{:href => "/groups/new"}
+                %i.fa.fa-pencill-square-o.icon
+                  \::before
+            %li.list
+              %a{:href => "/users/4352/edit"}
+                %i.fa.fa-cog.icon
+                  \::before
+        .groups
+          .group
+            %a{:href => "/groups/11172/messages"}
+              .group__name
+                サンプル
+              .group__message
+                よろしくお願いします
+      / ここからchatのところ
+      .chat
+        %div
