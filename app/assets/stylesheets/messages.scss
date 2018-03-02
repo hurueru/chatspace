@@ -1,5 +1,48 @@
+//メモ書き用
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.
+.notification {
+  background-color: #38AEF0;
+  height: 40px;
+  width: 100%;
+  top: 0;
+    .nontice {
+      text-align: center;
+      color: white;
+      font-size: 20px;
+    }
+}
+
+
+// .wrapper {
+// }
+
+.side-ber {
+  background-color: #2f3e51;
+  height: 100%;
+  width: 300px;
+  float: left;
+  .header {
+    color: #FFFFFF;
+      .header__name{
+
+      }
+  }
+}
+
+// .h3
+// .header__lists
+// .list
+// ./groups/new
+// .fa fa-pencill-square-o icon
+// .list
+// ./users/4352/edit
+// .fa-cog icon
+// .groups
+// .group
+// ./groups/11172/messages
+// .group__name
+// .group__message
+

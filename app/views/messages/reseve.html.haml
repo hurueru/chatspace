@@ -1,8 +1,10 @@
+/ このファイルは、index.html.hamlに書く為のメモ用のファイルです。あとで添削と実装し終わったら、このファイルは削除する。
 !!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title ChatSpace
+    / meta要素の中身は無しの方でいいか保留。著作権的にやばそうなら、meta要素の中身はカラで書く。
     %meta{:content => "authenticity_token", :name => "csrf-param"}/
     %meta{:content => "vBqRv4om1tvcQ/1QF0HfCL1aYDsgBsDpSA+0xZoD3CKhVFTX44402TEwqPQ4BPeviEc7SxqXYkeEQ6dzHJA1kg==>", :name => "csrf-token"}/
     %link{"data-turbolinks-track" => "reload", :href => "application.scss", :media => "all", :rel => "stylesheet"}/
@@ -33,6 +35,31 @@
                 サンプル
               .group__message
                 よろしくお願いします
-      / ここからchatのところ
+      / - ここからchatのところ
       .chat
-        %div
+        .header
+          .left-header
+            .left-header__title
+              sample
+            %ul.left-header__members
+              "
+              Members:
+              "
+              %li.member
+                seo neko
+            .rigth-header
+              %a.right-header__bottom{:href => "11172/edit"} Edit
+            .contents
+              .messages.js-messages
+                .message
+                .message
+              .footer
+                .footer__from
+                  / ここはコピペしていいか迷うので保留
+                  .from__mask
+                    %label.form__mask__image{:for => "message_image"}
+                      %i.fa.fa-picture-o.icon
+                        \::before
+                      / ここからしたは著作権的によろしくないかも？変える必要あるかも。
+                      %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
+                  %input.form_submit{"data-disble-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

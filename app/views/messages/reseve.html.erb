@@ -2,6 +2,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>ChatSpace</title>
+    <!-- meta要素の中身は無しの方でいいか保留。著作権的にやばそうなら、meta要素の中身はカラで書く。 -->
     <meta name="csrf-param" content="authenticity_token">
     <meta name="csrf-token" content="vBqRv4om1tvcQ/1QF0HfCL1aYDsgBsDpSA+0xZoD3CKhVFTX44402TEwqPQ4BPeviEc7SxqXYkeEQ6dzHJA1kg==>">
     <link rel="stylesheet" media="all" href="application.scss" data-turbolinks-track="reload">">
@@ -58,22 +59,38 @@
             <div class="left-header__title">
               sample
             </div>
-            <div class="left-header__members">
-              Members: seo neko
-            </div>
+            <ul class="left-header__members">
+              "
+              Members:
+              "
+              <li class="member">
+                seo neko
+              </li>
+            </ul>
           <div class="rigth-header">
+            <a class="right-header__bottom" href="11172/edit">Edit</a>
           </div>
         <div class="contents">
+            <div class="messages js-messages">
+            <div class="message"></div>
+            <div class="message"></div>
+          </div>
         <div class="footer">
-
+          <div class="footer__from">
+            <!-- ここはコピペしていいか迷うので保留 -->
+            <div class="from__mask">
+              <label class="form__mask__image" for="message_image">
+                <i class="fa fa-picture-o icon">
+                  ::before
+                </i>
+                <!-- ここからしたは著作権的によろしくないかも？変える必要あるかも。-->
+                <input class="hidden js-file" type="file" name="message[image]" id="message_image">
+              </label>
+            </div>
+            <input type="submit" name="commit" value="Send" class="form_submit" data-disble-with="Send">
           </div>
-          </div>
-          </div>
-
         </div>
       </div>
-
-
     </div>
   </body>
 </html>
