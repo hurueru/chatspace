@@ -1,54 +1,51 @@
-%p
-  "&gt;
-  %script{:async => "", :charset => "utf-8", :defer => "defer", :src => "/javascripts/application.js", :type => "text/javascript"}
 .notification
   .notice チャットグループが作成されました。
-/ .wrapper
-.side-ber
-  .header
-    %h3.header__name
-      Sample
-    %ul.header__lists
-      %li.list
-      /   %a{:href => "/groups/new"}
-      /     %i.fa.fa-pencill-square-o.icon
-      /       \::before
-      / %li.list
-      /   %a{:href => "/users/4352/edit"}
-      /     %i.fa.fa-cog.icon
-      /       \::before
-  .groups
-    .group
-      %a{:href => "/groups/11172/messages"}
-        .group__name
-          サンプル
-        .group__message
-          よろしくお願いします
-/ - ここからchatのところ
-.chat
-  .header
-    .left-header
-      .left-header__title
-        sample
-      %ul.left-header__members
-        "
-        Members:
-        "
-        %li.member
-          seo neko
-      .rigth-header
-        %a.right-header__bottom{:href => "11172/edit"} Edit
+  .wrapper
+    .side-ber
+      .header
+        %h3.header__name
+          Sample
+        %ul.header__lists
+          %li.list
+          /   %a{:href => "/groups/new"}
+          /     %i.fa.fa-pencill-square-o.icon
+          /       \::before
+          / %li.list
+          /   %a{:href => "/users/4352/edit"}
+          /     %i.fa.fa-cog.icon
+          /       \::before
+      .groups
+        .group
+          %a{:href => "/groups/11172/messages"}
+            .group__name
+              サンプル
+            .group__message
+              よろしくお願いします
+    / - ここからchatのところ
+    .chat
+      .header
+        .left-header
+          .left-header__title
+            sample
+          %ul.left-header__members
+            "
+            Members:
+            "
+            %li.member
+              seo neko
+        .right-header
+          / %a.right-header__bottom{:href => "11172/edit"} Edit
       .contents
         .messages.js-messages
           .message
           .message
-        .footer
-          .footer__from
-            / ここはコピペしていいか迷うので保留
-            .from__mask
-              %label.form__mask__image{:for => "message_image"}
-                %i.fa.fa-picture-o.icon
-                  \::before
-                / ここからしたは著作権的によろしくないかも？変える必要あるかも。
-                %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
-            %input.form_submit{"data-disble-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+      .footer
+        .footer__from
+    /             / ここはコピペしていいか迷うので保留
+    /             .from__mask
+    /               %label.form__mask__image{:for => "message_image"}
+    /                 %i.fa.fa-picture-o.icon
+    /                   \::before
+    /                 / ここからしたは著作権的によろしくないかも？変える必要あるかも。
+    /                 %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
+    /             %input.form_submit{"data-disble-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

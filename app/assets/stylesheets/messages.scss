@@ -9,40 +9,51 @@
   width: 100%;
   top: 0;
     .nontice {
-      text-align: center;
       color: white;
       font-size: 20px;
+      margin: 0;
     }
 }
 
 
-// .wrapper {
-// }
-
-.side-ber {
-  background-color: #2f3e51;
-  height: 100%;
-  width: 300px;
-  float: left;
-  .header {
-    color: #FFFFFF;
-      .header__name{
-
-      }
+.wrapper {
+  &:after{
+    display: block;
+    content: '';
+    clear: both;
   }
 }
 
-// .h3
-// .header__lists
-// .list
-// ./groups/new
-// .fa fa-pencill-square-o icon
-// .list
-// ./users/4352/edit
-// .fa-cog icon
-// .groups
-// .group
-// ./groups/11172/messages
-// .group__name
-// .group__message
+  .side-ber {
+    background-color: #2f3e51;
+    box-sizing: border-box;
+    height: 1000px;
+    width: 300px;
+    float: left;
+    // padding: 0px, 20px ,0px;
+    .header {
+      height: 100px;
+      background-color: #253141;
+    }
+      .h3.header__name {
+        font-size: 16px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+  }
 
+    .group {
+      height: 900px;
+      .a {
+        .group__name {
+          font-size: 15px;
+          color: #FFFFFF;
+          padding: 20px, 20px, 5px;
+          }
+        .group__message {
+          font-size: 11px;
+          color: #FFFFFF;
+          padding: 0px, 20px, 40px;
+          }
+      }
+    }
