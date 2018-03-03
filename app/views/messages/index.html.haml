@@ -8,12 +8,16 @@
         %ul.header__lists
           %li.list
           %a{:href => "/groups/new"}
-            %i.fa.fa-pencill-square-o.icon
-            ::before
-            %li.list
+            %i
+              =link_to do
+                =fa_icon "pencil-square-o"
+              / ::before
+          %li.list
             %a{:href => "/users/4352/edit"}
-            %i.fa.fa-cog.icon
-            ::before
+            %i
+              =link_to do
+                =fa_icon "cog"
+              / ::before
       .groups
         .group
           %a{:href => "/groups/11172/messages"}
@@ -27,10 +31,11 @@
         .left-header
           .left-header__title
             sampleグループ
-          %ul.left-header__members
-            Members:
-            %li.member
-              ryosukemaehira
+            .Members
+              Members:
+              %ul.left-header__members
+                %li.member
+                  ryosukemaehira
           .right-header
             %a.right-header__buttom{:href => "11172/edit"} edit
         / .right-header
