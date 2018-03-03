@@ -20,28 +20,29 @@
           font-size: 20px;
           color: #333333;
 // 行の高さ、幅を決めるところがまだ。
-          text-height: 35px;
-          padding: 0px, 40px, 0px, 0px;
+          padding: 35px 0px 0px 40px;
         }
           %left-header__members {
             font-size: 12px;
             color: #999999;
-            display: inline-block;
-            vertical-align: middle;
+            // display: inline-block;
+            // vertical-align: middle;
+            padding: 15px 40px 0px 0px;
           }
-          %member {
-            font-size: 12px;
-            color: #999999;
-            display:inline-block;
-            vertical-align: middle;
-          }
+            %member {
+              font-size: 12px;
+              color: #999999;
+              margin: 0 0 0 0;
+              // display:inline-block;
+              // vertical-align: middle;
+            }
       .right-header {
         // height: 100px;
         // width: 450px;
         float: right;
         // background-color: white;
         // background-color: blue;
-        // padding-top: 0px, 40px, 0px;
+        margin: 28px 40px 28px 20px;
         // right: 40px;
         // border: 1em;
         // border-color: yellow;
@@ -51,7 +52,7 @@
           width: 60px;
           float: right;
           background-color: white;
-          padding: 0px, 40px, 0px;
+          padding: 20px, 20px, 20px;
           right: 40px;
           border: 1em;
         }
@@ -65,7 +66,14 @@
       padding: 0px, 40px, 0px;
       top: 100px;
       .messages.js-messages {
-        font-size: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        padding: 15px 0px 40px 40px;
+        .message {
+          font-size: 14px;
+          color: #434A54;
+        }
 
       }
     }
@@ -83,12 +91,12 @@
         height: 50px;
         width: calc(100vw - 300px);
         textarea {
-          width: calc(100vw - 380px);
+          width: calc(100vw - 550px);
           resize: horizontal;
           font-size: 16px;
           color: #434A54;
           left: 300px;
-          margin: 19px 0;
+          margin: 20px 35px 20px 40px;
         }
         a.square_btn {
           position: relative;
@@ -97,10 +105,9 @@
           float: right;
           height: 50px;
           width: 70px;
-          margin: 20px 0px;
-
+          margin: 20px 40px 15px 20px;
           i.fa.fa-chevron-right {
-            color: white;
+            color: #38AEF0;
 
           }
         }
