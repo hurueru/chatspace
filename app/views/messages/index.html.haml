@@ -32,7 +32,9 @@
             %li.member
               ryosukemaehira
           .right-header
-          %a.right-header__bottom{:href => "11172/edit"} Edit
+            %a.right-header__buttom{:href => "11172/edit"} edit
+        / .right-header
+        /   %a.right-header__buttom{:href => "11172/edit"} Edit
       .contents
         .messages.js-messages
           ryosukemaehira
@@ -51,10 +53,19 @@
           .message
             お腹すいた
       .footer
-        .footer__from
+        .form
+          %textarea{:placeholder => "type a message"}
+          %a.square_btn{:href => "#"}
+          %i.fa.fa-chevron-right
+          Send
+
+
+
+
+          / %label.form__mask__image{:for => "message_image"}
     /             / ここはコピペしていいか迷うので保留
     /             .from__mask
-    /               %label.form__mask__image{:for => "message_image"}
+    /
     /                 %i.fa.fa-picture-o.icon
     /                   \::before
     /                 / ここからしたは著作権的によろしくないかも？変える必要あるかも。
