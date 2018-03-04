@@ -3,21 +3,12 @@
   .wrapper
     .side-ber
       .header
-        %h3.header__name
+        .header__name
           Sample
-        %ul.header__lists
-          %li.list
-          %a{:href => "/groups/new"}
-            %i
-              =link_to do
-                =fa_icon "pencil-square-o"
-              / ::before
-          %li.list
-            %a{:href => "/users/4352/edit"}
-            %i
-              =link_to do
-                =fa_icon "cog"
-              / ::before
+        .header__icon
+          =fa_icon "pencil-square-o"
+          =fa_icon "cog"
+
       .groups
         .group
           %a{:href => "/groups/11172/messages"}
@@ -37,7 +28,8 @@
                 %li.member
                   ryosukemaehira
           .right-header
-            %a.right-header__buttom{:href => "11172/edit"} edit
+            %a.right-header__buttom{:href => "11172/edit"}
+              edit
         / .right-header
         /   %a.right-header__buttom{:href => "11172/edit"} Edit
       .contents
@@ -63,6 +55,7 @@
           %a.square_btn{:href => "#"}
             %i.fa.fa-chevron-right
             Send
-            %label.form__mask__image{:for => "message_image"}
-              .from__mask
-                %i.fa.fa-picture-o.icon
+          .form__mask
+          %label.form__mask__image{:for => "message_image"}
+            %i.fa.fa-picture-o.icon
+

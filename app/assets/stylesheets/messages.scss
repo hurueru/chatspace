@@ -33,39 +33,23 @@
     .header {
       height: 100px;
       background-color: #253141;
-      h3.header__name {
+      .header__name {
+        // height: 100px;
+        // width: 260px;
         color: #FFFFFF;
         font-size: 16px;
         font-weight: bold;
-        display: table-cell;
         vertical-align: middle;
-        padding: 35px 0 0 40px;
+        padding: 0px 20px 0 20px;
+        line-height: 106px;
+        float: left;
+        display:inline-block;
       }
-      .header__lists {
-        .list {
-          i.fas.fa-edit
-          {
-            width: 16px;
-            height: 16px;
-            fill: #fff;
-            margin: 35px 20px ;
-            text-align: center;
-            color: white;
-          }
-        }
-        .list {
-          i.fas.fa-cog
-          {
-            color: white;
-            width: 16px;
-            height: 16px;
-            margin: 0px;
-            fill: #fff;
-            text-align: center;
-          }
+        .header__icon{
+          float: right;
         }
       }
-    }
+
     .group {
       height: 900px;
       a {
