@@ -49,15 +49,19 @@
       float: right;
       margin: -97px -183px 0px 0px;
       border-color: yellow;
-      a.right-header__buttom {
+      text-align:center;
+      .right-header__buttoms {
         height: 40px;
         width: 60px;
-        margin: 28px 40px 28px 40px;
-        border: 1px solid;
-        border-color: #38AEF0;
         background-color: white;
-        float: right;
-        text-align: center;
+        margin: 28px 40px 28px 40px;
+        a.right-header__buttom {
+          border: 1px solid;
+          border-color: #38AEF0;
+          float: right;
+          text-align: center;
+          padding: 10px 20px 10px 20px;
+        }
       }
     }
   }
@@ -98,31 +102,33 @@
         left: 300px;
         margin: 20px 0px 20px 40px;
       }
-
-      .form__mask {
-        height: 50px;
-        width: 40px;
+    }
+    .form__mask {
+      height: 50px;
+      width: 40px;
+      float: right;
+      background-color: white;
+      margin: 20px 15px 20px 0px;
+      clear: left;
+      i.fa.fa-picture-o.icon {
         float: right;
-        background-color: white;
-        margin: 20px 15px 20px 0px;
-        i.fa.fa-picture-o.icon {
-          float: right;
-          padding: 18px 10px 0px 0px;
-        }
+        padding: 18px 10px 0px 0px;
       }
+    }
+    .square_button {
+      height: 50px;
+      width: 70px;
+      position: relative;
+      display: inline-block;
+      background-color: #38AEF0;
+      float: right;
+      margin: 20px 10px 20px 0px;
       a.square_btn {
-        position: relative;
-        display: inline-block;
-        background-color: #38AEF0;
-        float: right;
-        height: 50px;
-        width: 70px;
-        margin: 20px 10px 20px 0px;
-      }
         i.fa.fa-chevron-right {
           color: #38AEF0;
           text-align: center;
         }
+      }
     }
   }
 }

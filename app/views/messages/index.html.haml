@@ -1,5 +1,6 @@
 .notification
-  .notice チャットグループが作成されました。
+  .notice
+    チャットグループが作成されました。
   .wrapper
     .side-ber
       .header
@@ -28,8 +29,9 @@
                 %li.member
                   ryosukemaehira
           .right-header
-            %a.right-header__buttom{:href => "11172/edit"}
-              Edit
+            .right-header__buttoms
+              %a.right-header__buttom{:href => "11172/edit"}
+                Edit
       .contents
         .messages.js-messages
           ryosukemaehira
@@ -50,10 +52,11 @@
       .footer
         .form
           %textarea{:placeholder => "type a message"}
+        .form__mask
+          %label.form__mask__image{:for => "message_image"}
+            %i.fa.fa-picture-o.icon
+        .square_button
           %a.square_btn{:href => "#"}
             %i.fa.fa-chevron-right
             Send
-          .form__mask
-            %label.form__mask__image{:for => "message_image"}
-            %i.fa.fa-picture-o.icon
 
