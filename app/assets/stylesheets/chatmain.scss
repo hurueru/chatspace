@@ -5,12 +5,13 @@
     height: 100px;
     width: calc(100vw - 300px);
     background-color: white;
+    // background-color: #C299FF;
     padding: 0px, 40px, 0px;
     left: 300px;
     .left-header {
       height: 100px;
       width: calc(100vw - 500px);
-      background-color: red;
+      background-color: white;
       padding: 0px, 40px, 0px;
       left: 600px;
       .left-header__title {
@@ -21,7 +22,8 @@
         .Members {
             font-size: 12px;
             color: #999999;
-            background-color: #46EEFF;
+            background-color: white;
+            // background-color: #46EEFF;
             padding: 0px 0px 0px 0px;
           ul.left-header__members {
             font-size: 12px;
@@ -29,11 +31,13 @@
             background-color: #46EEFF;
             padding: 0px 0px 0px 40px;
             left: 40px;
+            // display: -webkit-flex;
             display: flex;
             li.member {
               font-size: 12px;
               color: #999999;
-              background-color: green;
+              // background-color: green;
+              margin: -17px 0px 0px 31px;
             }
           }
         }
@@ -41,31 +45,30 @@
     }
     .right-header {
       height: 100px;
-      width: calc(100vw - 450px);
+      width: calc(100vw - 1227px);
       float: right;
       // background-color: white;
-      background-color: blue;
-      margin: 28px 40px 28px 20px;
+      background-color: ;
+      margin: -82px -183px 0px 0px;
       // right: 40px;
-      border: 5em;
       border-color: yellow;
-      a.right__buttom {
+      a.right-header__buttom {
         height: 40px;
         width: 60px;
-        float: right;
+        margin: 28px 40px 28px 40px;
+        // right: 40px;
+        border: #eeeeee;
+        border-color: #38AEF0;
         background-color: white;
-        padding: 20px, 20px, 20px;
-        right: 40px;
-        border: 1em;
+        float: right;
       }
     }
   }
 
   .contents {
-    background-color: #AAAAAA;
     height: 810px;
     width: calc(100vw - 300px);
-    background-color: white;
+    background-color: #EEEEEE;
     padding: 0px, 40px, 0px;
     top: 100px;
     .messages.js-messages {
@@ -83,12 +86,10 @@
   .footer {
     height: 90px;
     width: calc(100vw - 300px);
-    background-color: #C0C0C0;
-    // position: fixed;
-    // bottom: 0;
+    // background-color: #C0C0C0;
+    background-color: #AAAAAA;
     left: 300px;
     clear: both;
-    // top: 800px;
     .form {
       height: 50px;
       width: calc(100vw - 300px);
