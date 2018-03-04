@@ -7,20 +7,22 @@
   height: 40px;
   width: 100%;
   top: 0;
-  .nontice {
+  color: #FFFFFF;
+  .notice {
     color: #FFFFFF;
     font-size: 20px;
+    text-align: center
   }
 }
 
 
-.wrapper {
-  &:after{
-    display: block;
-    content: '';
-    clear: both;
+  .wrapper {
+    &:after{
+      display: block;
+      content: '';
+      clear: both;
+    }
   }
-}
 
   .side-ber {
     background-color: #2f3e51;

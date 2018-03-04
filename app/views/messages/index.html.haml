@@ -31,7 +31,7 @@
           .right-header
             .right-header__buttoms
               %a.right-header__buttom{:href => "11172/edit"}
-                Edit
+                %p Edit
       .contents
         .messages.js-messages
           ryosukemaehira
@@ -52,11 +52,10 @@
       .footer
         .form
           %textarea{:placeholder => "type a message"}
-        .form__mask
-          %label.form__mask__image{:for => "message_image"}
+          .square_buttom
+            %a.square_btn{:href => "#"}
+              %p Send
+          .form__mask
+            %label.form__mask__image{:for => "message_image"}
             %i.fa.fa-picture-o.icon
-        .square_button
-          %a.square_btn{:href => "#"}
-            %i.fa.fa-chevron-right
-            Send
 

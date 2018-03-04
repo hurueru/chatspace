@@ -5,7 +5,6 @@
     height: 100px;
     width: calc(100vw - 300px);
     background-color: white;
-    // background-color: #C299FF;
     padding: 0px, 40px, 0px;
     left: 300px;
     .left-header {
@@ -17,7 +16,6 @@
       .left-header__title {
         font-size: 20px;
         color: #333333;
-// 行の高さ、幅を決めるところがまだ。
         padding: 35px 0px 0px 40px;
         .Members {
             font-size: 12px;
@@ -61,6 +59,7 @@
           float: right;
           text-align: center;
           padding: 10px 20px 10px 20px;
+          color: #38AEF0;
         }
       }
     }
@@ -95,12 +94,32 @@
       height: 90px;
       width: calc(100vw - 300px);
       textarea {
-        width: calc(100vw - 477px);
+        vertical-align: middle;
+        height: 50px;
+        line-height: 50px;
+        width: calc(100vw - 487px);
         resize: horizontal;
         font-size: 16px;
         color: #434A54;
         left: 300px;
         margin: 20px 0px 20px 40px;
+        padding-left: 10px;
+
+      }
+    }
+    .square_buttom {
+      clear: left;
+      height: 50px;
+      width: 70px;
+      line-height: 50px;
+      position: relative;
+      display: inline-block;
+      background-color: #38AEF0;
+      float: right;
+      margin: 20px 10px 20px 0px;
+      a.square_btn {
+        color: white;
+        text-align: center;
       }
     }
     .form__mask {
@@ -110,24 +129,11 @@
       background-color: white;
       margin: 20px 15px 20px 0px;
       clear: left;
+      color: black;
       i.fa.fa-picture-o.icon {
         float: right;
         padding: 18px 10px 0px 0px;
-      }
-    }
-    .square_button {
-      height: 50px;
-      width: 70px;
-      position: relative;
-      display: inline-block;
-      background-color: #38AEF0;
-      float: right;
-      margin: 20px 10px 20px 0px;
-      a.square_btn {
-        i.fa.fa-chevron-right {
-          color: #38AEF0;
-          text-align: center;
-        }
+        color: black;
       }
     }
   }
