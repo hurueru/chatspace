@@ -12,11 +12,10 @@
 
       .groups
         .group
-          %a{:href => "/groups/11172/messages"}
-            .group__name
-              サンプル
-            .group__message
-              よろしくお願いします
+          .group__name
+            サンプル
+          .group__message
+            よろしくお願いします
     / - ここからchatのところ
     .chat
       .header
@@ -30,7 +29,7 @@
                   ryosukemaehira
           .right-header
             .right-header__buttoms
-              %a.right-header__buttom{:href => "11172/edit"}
+              .right-header__buttom
                 %p Edit
       .contents
         .messages.js-messages
@@ -53,7 +52,7 @@
         .form
           %textarea{:placeholder => "type a message"}
           .square_buttom
-            %a.square_btn{:href => "#"}
+            .square_btn
               %p Send
           .form__mask
             %label.form__mask__image{:for => "message_image"}
