@@ -49,11 +49,12 @@
         }
       }
       .right-header {
-        height: 100px;
-        width: 30%;
-        float: right;
+        // height: 100px;
+        width: 13%;
         // margin: -97px -183px 0px 0px;
         text-align:center;
+        float: right;
+        color: #38AEF0;
         .right-header__buttoms {
           height: 40px;
           width: 60px;
@@ -62,10 +63,10 @@
           .right-header__buttom {
             border: 1px solid;
             border-color: #38AEF0;
-            float: right;
+            // float: right;
             text-align: center;
-            padding: 10px 20px 10px 20px;
-            color: #38AEF0;
+            // padding: 10px 20px 10px 20px;
+            // color: #38AEF0;
           }
         }
       }
@@ -99,14 +100,14 @@
         height: 90px;
         width: calc(100vw - 300px);
         textarea {
-          vertical-align: middle;
+          // vertical-align: middle;
           height: 50px;
           line-height: 50px;
-          width: calc(100vw - 600px);
-          resize: horizontal;
+          width: calc(100vw - 477px);
+          // resize: horizontal;
           font-size: 16px;
           color: #434A54;
-          left: 300px;
+          // left: 300px;
           margin: 20px 0px 20px 40px;
           padding-left: 10px;
 
@@ -116,10 +117,10 @@
         .form__mask {
           height: 50px;
           width: 40px;
-          float: right;
+          float: left;
           background-color: white;
           margin: 20px 0px 20px 0px;
-          clear: left;
+          // clear: left;
           color: black;
           i.fa.fa-picture-o.icon {
             float: right;
@@ -130,14 +131,14 @@
 
 
         .square_buttom {
-          clear: left;
+          // clear: left;
           height: 50px;
           width: 70px;
           line-height: 50px;
-          position: relative;
-          display: inline-block;
+          // position: relative;
+          // display: inline-block;
           background-color: #38AEF0;
-          float: right;
+          float: left;
           margin: 20px 40px 20px 15px;
           .square_btn {
             color: white;
