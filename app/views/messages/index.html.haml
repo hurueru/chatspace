@@ -1,0 +1,77 @@
+.wrapper
+  .notification
+    .notice
+      チャットグループが作成されました。
+  .side-ber
+    .header
+      .header__name
+        Sample
+      .header__icon
+        =fa_icon "pencil-square-o"
+        =fa_icon "cog"
+
+    .groups
+      .group
+        .group__name
+          サンプル
+        .group__message
+          よろしくお願いします
+  / - ここからchatのところ
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          sampleグループ
+          .Members
+            Members:
+            %ul.left-header__members
+              %li.member
+                ryosukemaehira
+      .right-header
+        .right-header__buttoms
+          .right-header__buttom
+            %p Edit
+    .contents
+      .messages.js-messages
+        ryosukemaehira
+        .time_stamp
+          2016/10/02  06:27:07
+        .message
+          なるほど
+      .messages.js-messages
+        ryosukemaehira
+        .time_stamp
+          2016/10/02  06:27:14
+        .message
+          水色きらい
+      .messages.js-messages
+        ryosukemaehira
+        .time_stamp
+          2016/10/02  06:27:25
+        .message
+          command Enterで送信したい感ある
+      .messages.js-messages
+        ryosukemaehira
+        .time_stamp
+          2016/10/02  06:27:30
+        .message
+          お腹すいた
+    / .footer
+    /   .form
+    /     %textarea{:placeholder => "type a message"}
+    /     .square_buttom
+    /       .square_btn
+    /         %p Send
+    /     .form__mask
+    /       %label.form__mask__image{:for => "message_image"}
+    /       %i.fa.fa-picture-o.icon
+    .footer
+      .form
+        %textarea{:placeholder => "type a message"}
+        .form__mask
+          %label.form__mask__image{:for => "message_image"}
+          %i.fa.fa-picture-o.icon
+        .square_buttom
+          .square_btn
+            %p Send
+
