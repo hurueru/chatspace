@@ -6,7 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module DataBaseDesignSample
+# module DataBaseDesignSample
+#   class Application < Rails::Application
+module ChatSpace
   class Application < Rails::Application
     # ここから下を追加。チャット画面作成のため、いらない関連ファイル群を退ける、制約
     config.generators do |g|
@@ -18,5 +20,6 @@ module DataBaseDesignSample
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.i18n.default_locale = :ja
   end
 end
