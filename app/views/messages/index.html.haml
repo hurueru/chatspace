@@ -5,7 +5,7 @@
   .side-bar
     .groups
       .group
-        = render 'devise/shared/side_bar'
+        = render 'shared/side_bar'
   / - ここからchatのところ
   .chat
     .header
@@ -22,30 +22,18 @@
           .right-header__buttom
             %p Edit
     .contents
-      .messages.js-messages
-        ryosukemaehira
-        .time_stamp
-          2016/10/02  06:27:07
-        .message
-          なるほど
-      .messages.js-messages
-        ryosukemaehira
-        .time_stamp
-          2016/10/02  06:27:14
-        .message
-          水色きらい
-      .messages.js-messages
-        ryosukemaehira
-        .time_stamp
-          2016/10/02  06:27:25
-        .message
-          command Enterで送信したい感ある
-      .messages.js-messages
-        ryosukemaehira
-        .time_stamp
-          2016/10/02  06:27:30
-        .message
-          お腹すいた
+      .message
+        - @messages.each do |message|
+          .upper-message
+            %span.upper-message__user-name
+              = message.user.name
+            .upper-message__date
+              = message.created_at
+          .lower-message
+            - if message.content.present?
+              %p.lower-message__content
+                = message.content
+            = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
     / .footer
     /   .form
     /     %textarea{:placeholder => "type a message"}
@@ -57,11 +45,19 @@
     /       %i.fa.fa-picture-o.icon
     .footer
       .form
-        %textarea{:placeholder => "type a message"}
-        .form__mask
-          %label.form__mask__image{:for => "message_image"}
-          %i.fa.fa-picture-o.icon
-        .square_buttom
-          .square_btn
-            %p Send
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+      / .form
+      /   %textarea{:placeholder => "type a message"}
+      /   .form__mask
+      /     %label.form__mask__image{:for => "message_image"}
+      /     %i.fa.fa-picture-o.icon
+      /   .square_buttom
+      /     .square_btn
+      /       %p Send
 
