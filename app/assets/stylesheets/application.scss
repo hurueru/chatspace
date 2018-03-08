@@ -3,12 +3,15 @@
 @import "./chatmain";
 @import "./font-awesome";
 @import "config/colors";
+@import "modules/flash";
+@import "./user";
+@import "./group";
+
+// @import "modules/chat";
+// @import "modules/side_bar";
 // @import "config/size";
 // @import "mixins/mixin";
 // @import "mixins/vendor_prefix";
-@import "modules/flash";
-// @import "modules/chat";
-// @import "modules/side_bar";
-// @import "modules/user";
+
 // @import "modules/group";
 // @import "messages/messages.scss"

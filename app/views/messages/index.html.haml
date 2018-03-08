@@ -2,20 +2,10 @@
   .notification
     .notice
       チャットグループが作成されました。
-  .side-ber
-    .header
-      .header__name
-        Sample
-      .header__icon
-        =fa_icon "pencil-square-o"
-        =fa_icon "cog"
-
+  .side-bar
     .groups
       .group
-        .group__name
-          サンプル
-        .group__message
-          よろしくお願いします
+        = render 'devise/shared/side_bar'
   / - ここからchatのところ
   .chat
     .header

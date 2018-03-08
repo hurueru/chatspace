@@ -1,9 +1,9 @@
-.wrapper {
-  &:after{
-    display: block;
-    content: '';
-    // clear: both;
-  }
+// .wrapper {
+//   &:after{
+//     display: block;
+//     content: '';
+//     // clear: both;
+//   }
   .chat {
     width: calc(100vw - 300px);
     margin-left: 300px;
@@ -155,4 +155,4 @@
 
     }
   }
-}
+// }
