@@ -20,7 +20,7 @@
       .right-header
         .right-header__buttoms
           .right-header__buttom
-            %p Edit
+            =link_to "Edit",edit_group_path(@group), class: "right-header__buttom__edit"
     .contents
       .message
         - @messages.each do |message|
@@ -34,30 +34,13 @@
               %p.lower-message__content
                 = message.content
             = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-    / .footer
-    /   .form
-    /     %textarea{:placeholder => "type a message"}
-    /     .square_buttom
-    /       .square_btn
-    /         %p Send
-    /     .form__mask
-    /       %label.form__mask__image{:for => "message_image"}
-    /       %i.fa.fa-picture-o.icon
     .footer
       .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
-      / .form
-      /   %textarea{:placeholder => "type a message"}
-      /   .form__mask
-      /     %label.form__mask__image{:for => "message_image"}
-      /     %i.fa.fa-picture-o.icon
-      /   .square_buttom
-      /     .square_btn
-      /       %p Send
-
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image'
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
+          / .square_buttom
