@@ -35,7 +35,7 @@
                 = message.content
             = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
     .footer
-      .form
+      .form.clearfix
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
           .form__mask
