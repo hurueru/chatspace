@@ -1,4 +1,14 @@
 $(function(){
+  function buidHTML(comment){
+    var html = `<p>
+                  <strong>
+                    <a href=${message.id}>${message.user_name}</a>
+                    :
+                    </strong>
+                    ${message.text}
+                  </p>`
+    return html;
+  }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     console.log(this)
@@ -12,5 +22,18 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buidHTML(data);
+      $('.messages').append(html)
+      $('.textbox').val('')
+    })
+    .fail(function(){
+      alert('error');
+    })
   })
-})
+  $(function() {
+    $('#html').animate({
+      'marginTop': '600px'
+    },1000);
+  });
+});
