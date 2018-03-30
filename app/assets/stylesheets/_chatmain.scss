@@ -78,10 +78,9 @@
     width: calc(100vw - 300px);
     background-color: #EEEEEE;
     top: 100px;
-
+    overflow: scroll;
     .message {
       padding: 0px 40px 0px 0px;
-
       .upper-message {
         padding: 46px 0px 15px 40px;
 

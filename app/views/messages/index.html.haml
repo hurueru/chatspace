@@ -22,7 +22,7 @@
           .right-header__buttom
             =link_to "Edit",edit_group_path(@group), class: "right-header__buttom__edit"
     .contents
-      .message
+      %div{:id => "message_main", :class => "message"}
         - @messages.each do |message|
           .upper-message
             %span.upper-message__user-name
@@ -36,7 +36,7 @@
             = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
     .footer
       .form.clearfix
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], id: 'new_message' do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
           .form__mask
             = f.label :image, class: 'form__mask__image'
