@@ -34,7 +34,6 @@ $(function(){
       console.log($('#message_main').get(0).scrollHeight);
       $('.contents').animate({scrollTop: $('#message_main').get(0).scrollHeight
       }, "slow");
-
       $('.form__message').val('')
     }).fail(function(e){
       alert('error');
