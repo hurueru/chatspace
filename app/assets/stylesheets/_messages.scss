@@ -1,13 +1,7 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.wrapper {
-  &:after{
-    display: block;
-    content: '';
-    // clear: both;
-  }
+@import "./clearfix";
 
+.wrapper {
+  @include clearfix();
   .notification {
     background-color: #38AEF0;
     height: 40px;
@@ -24,26 +18,21 @@
 
   .side-bar {
     background-color: #2f3e51;
-    box-sizing: border-box;
     height: 1000px;
     width: 300px;
     float: left;
-    // padding: 0px, 20px ,0px;
     .header {
       height: 100px;
       background-color: #253141;
       padding: 0px 20px 0px 20px;
       .header__name {
-        // height: 100px;
-        // width: 260px;
         color: #FFFFFF;
         font-size: 16px;
         font-weight: bold;
         vertical-align: middle;
-        // padding: 0px 20px 0 20px;
         line-height: 106px;
         float: left;
-        display:inline-block;
+        display: inline-block;
       }
       .header__lists {
         float: right;
@@ -55,7 +44,7 @@
             float: right;
             vertical-align: middle;
             line-height: 106px;
-            display:inline-block;
+            display: inline-block;
           }
         }
       }
