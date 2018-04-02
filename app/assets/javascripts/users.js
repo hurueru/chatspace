@@ -1,14 +1,17 @@
 $(function() {
 
 function appendUser(user) {
-  var html = `<div class="chat-group-form__field--right">
-
-  </div>`
+  var html = `<div class="chat-group-user clearfix">
+  <p class="chat-group-user__name">
+    ${user.name}
+  </p>
+  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
+</div>`
+  $("#user-search-result").append(html);
 }
 
   $(".chat-group-form__input").on("keyup", function() {
     var input = $(this).val();
-
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -16,8 +19,7 @@ function appendUser(user) {
       dataType: 'json'
     })
    .done(function(users) {
-     $(".chat-group-form__input").empty();
-      console.log(users)
+     $("#user-search-result").empty();
      if ($.isArray(users)) {
        users.forEach(function(user){
          appendUser(user);
@@ -27,28 +29,29 @@ function appendUser(user) {
        return false;
      }
    })
-   .fail(function(){
-    return false;
-   })
-   .
+    .fail(function() {
+      alert('ユーザー名の検索に失敗しました。');
+    })
   });
-});
 
-    // .done(function(data){ //データを受け取ることに成功したら、dataを引数に取って以下のことする(dataには@usersが入っている状態ですね)
-    //   $('#result').find('li').remove();  //idがresultの子要素のliを削除する
-    //   $(data).each(function(i, user){ //dataをuserという変数に代入して、以下のことを繰り返し行う(単純なeach文ですね)
-    //     $('#result').append('<li>' + user_name + '</li>')
-    //   });
-    // })
+function addUser(user) {
+  var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  <input name='group[user_ids][]' type='hidden' value="${user.attr("data-user-id")}">
+  <p class='chat-group-user__name'>${user.attr("data-user-name")}</p>
+  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+</div>
+`
+  $(".chat-group-form__field--right-member").append(html);
+}
 
-    // .done(function(data){
-    //   var html = buidHTML(data);
-    //   $('.chat-group-form__input').append(html)
-    //   $('#user-search-field').val('')
-    // }).fail(function(e){
-    //   alert('error');
-    // });
+  $("#user-search-result").on('click', '.chat-group-user__btn--add', function(){
+    input = $(this);
+    var add_user_html = addUser(input);
+    $(".chat-group-form__field--right-member").append(add_user_html);
+   input.parent().remove();
+    });
 
-
-
-
+  $(document).on('click', '.user-search-remove', function(){
+    $(".chat-group-user.clearfix.js-chat-member").parent().remove();
+  });
+  });
