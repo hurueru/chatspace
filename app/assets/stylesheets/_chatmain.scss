@@ -1,3 +1,5 @@
+@import "./clearfix";
+
 .chat {
   width: calc(100vw - 300px);
   margin-left: 300px;
@@ -6,7 +8,6 @@
     height: 100px;
     width: calc(100vw - 300px);
     background-color: white;
-    // left: 300px;
     padding: 0 40px;
     box-sizing: border-box;
     .left-header {
@@ -45,7 +46,6 @@
     }
 
     .right-header {
-      // width: 13%;
       text-align:center;
       float: right;
       color: #38AEF0;
@@ -82,15 +82,16 @@
     .message {
       padding: 0px 40px 0px 0px;
       .upper-message {
+        @include clearfix();
         padding: 46px 0px 15px 40px;
-
         .upper-message__user-name {
           color: #434A54;
           font-weight: bold;
           font-size: 16px;
+          float: left;
         }
-
         .upper-message__date {
+          float: left;
           display: inline-block;
           font-size: 12px;
           color: #999999;
@@ -98,10 +99,8 @@
           margin-left: 10px;
         }
       }
-
       .lower-message {
-
-        p.lower-message__content {
+        .lower-message__content {
           font-size: 14px;
           color: #434A54;
           padding: 0px 0px 0px 40px;
@@ -114,17 +113,13 @@
     height: 90px;
     width: 100%;
     background-color: #AAAAAA;
-    // padding: 20px 40px 20px 40px;
     .form {
       height: 90px;
-      // box-sizing: border-box;
       width: calc(100vw - 300px);
-      // margin: 0px 40px;
       padding: 20px 40px;
       box-sizing: border-box;
       .form__message {
         height: 50px;
-        // line-height: 50px;
         width:  calc(100% - 153px);
         padding-left: 10px;
         vertical-align: middle;
@@ -136,14 +131,12 @@
 
       .form__mask {
         height: 50px;
-        // width: 40px;
         float: left;
         background-color: white;
         padding: 0px 10px 0px 0px;
         color: black;
 
         .form__mask__image {
-          display: none;
         }
         .hidden {
           display: none;
@@ -157,12 +150,9 @@
 
       .form__submit {
         height: 50px;
-        // width: 70px;
-        // line-height: 50px;
         color: white;
         background-color: #38AEF0;
         padding: 0 30px;
-        // text-align: center;
         margin: 0px 0px 0px 15px;
         float: right;
         border: none;
