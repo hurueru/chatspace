@@ -4,15 +4,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @group = Group.find(params[:group_id])
-    @messages = @group.messages.order(created_at: :DESC).includes(:user)
+    @messages = @group.messages.includes(:user)
+    #binding.pry
     respond_to do |format|
       format.html
-      format.json
-    # @messages = @group.messages.includes(:user)
-    # respond_to do |format|
-    #   format.html
-    #   format.json {@new_messages = @messages.where('id > ?', params[:message][:id])}
+      format.json {@new_messages = @messages.where('id > ?', params[:id])}
     end
   end
 
@@ -21,7 +17,7 @@ class MessagesController < ApplicationController
 
     if @message.save
 
-  # require 'byebug'; byebug
+  #require 'byebug'; byebug
       respond_to do |format|
         format.html { redirect_to group_messages_path(@group) }
         format.json

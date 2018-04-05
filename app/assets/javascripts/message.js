@@ -1,8 +1,8 @@
 $(function(){
-  function buidappendMessage(message){
+  function buildappendMessage(message){
     imageurl = '';
-    if (message.image){
-      imageurl = `<img src="${message.image.url}" class="lower-message__image">`
+    if (message.image_url){
+      imageurl = `<img src="${message.image_url}" class="lower-message__image">`
     }
 
     var html = `
@@ -30,7 +30,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-
     $.ajax({
       url: url,
       type: 'POST',
@@ -40,7 +39,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var html = buidappendMessage(data);
+      var html = buildappendMessage(data);
       $('.contents').append(html);
       $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight});
       $('.form__message').val('')
@@ -48,51 +47,34 @@ $(function(){
     alert('error');
     })
     return false;
-  })
+  });
   // });
-
-  setInterval(function() {
-  $.ajax({
-    url: location.href.json,
-  })
-  .done(function(data) {
-  })
-  .fail(function(data) {
-  });
-} else {
-    clearInterval(interval);
-  } , 5000 );
-  });
-
-  // function update(){
-  //   setInterval(update, 5000);
-  //   var url = window.location.pathname;
-  //   if(url.match(/\/groups\/\d\/messages/)){
-
-  //   var message_id = $('.upper-message').last(0).attr('id');
-  //   console.log(message_id);
-  //   $.ajax({
-  //     url: url,
-  //     type: 'GET',
-  //     data: {
-  //       message: { id: message_id }
-  //     },
-  //     dataType: 'json',
-  //     processData: false,
-  //     contentType: false
-  //   })
-
-  //   .done(function(messages){
-  //     console.log(messages);
-  //     messages.forEach(function(message){
-  //       var html = buidappendMessage(message);
-  //       $('.contents').append(html);
-  //     });
-  //   })
-  //   .fail(function(){
-  //     alert('error')
-  //   })
-
-  //   }
-  // }
+  function update(){
+    var url = window.location.pathname;
+    console.log(url)
+    if(url.match(/\/groups\/\d\/messages/)){
+    var id = $('.upper-message').last(0).attr('id');
+    console.log(id);
+    $.ajax({
+      url: url,
+      type: 'GET',
+      data: {id: id},
+      dataType: 'json',
+    })
+    .done(function(messages){
+      console.log(messages);
+      if (messages.length !== 0){
+      messages.forEach(function(message){
+        console.log(message);
+        var html = buildappendMessage(message);
+        $('.contents').append(html);
+      });
+    }
+    })
+    .fail(function(){
+      //alert('error')
+    })
+    }
+  }
+  setInterval(update, 5000);
 });
