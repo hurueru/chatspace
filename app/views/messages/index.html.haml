@@ -6,41 +6,29 @@
     .groups
       .group
         = render 'shared/side_bar'
-  / - ここからchatのところ
   .chat
     .header
       .left-header
         .left-header__title
-          sampleグループ
+          = @group.name
           .Members
             Members:
             %ul.left-header__members
               %li.member
-                ryosukemaehira
+                = current_user.name
       .right-header
         .right-header__buttoms
           .right-header__buttom
             =link_to "Edit",edit_group_path(@group), class: "right-header__buttom__edit"
     .contents
-      %div{:id => "message_main", :class => "message"}
-        - @messages.each do |message|
-          .upper-message
-            %span.upper-message__user-name
-              = message.user.name
-            .upper-message__date
-              = message.created_at
-          .lower-message
-            - if message.content.present?
-              %p.lower-message__content
-                = message.content
-            = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      = render @messages
     .footer
       .form.clearfix
         = form_for [@group, @message], id: 'new_message' do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
           .form__mask
-            = f.label :image, class: 'form__mask__image'
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
+            %label.form__mask__image
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'form__submit'
-          / .square_buttom
+          .square_buttom
