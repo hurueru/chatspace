@@ -1,9 +1,15 @@
 $(function(){
   function buildappendMessage(message){
-    imageurl = '';
-    if (message.image_url){
-      imageurl = `<img src="${message.image_url}" class="lower-message__image">`
-    }
+    var imageurl = `<img src="${message.image_url.url}" class="lower-message__image">`
+    // debugger;
+    // imageurl = '';
+    $(function() {
+      if (imageurl == ""){
+        imageurl = '';
+      } else {
+        imageurl = `<img src="${message.image_url.url}" class="lower-message__image">`
+      }
+    });
 
     var html = `
     <div class="message" id= "message_main">
@@ -25,7 +31,6 @@ $(function(){
     return html;
   }
 
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -41,20 +46,18 @@ $(function(){
     .done(function(data){
       var html = buildappendMessage(data);
       $('.contents').append(html);
-      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight});
+      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 1);
       $('.form__message').val('')
     }).fail(function(e){
     alert('error');
     })
     return false;
   });
-  // });
+
   function update(){
     var url = window.location.pathname;
-    console.log(url)
     if(url.match(/\/groups\/\d\/messages/)){
     var id = $('.upper-message').last(0).attr('id');
-    console.log(id);
     $.ajax({
       url: url,
       type: 'GET',
@@ -62,17 +65,19 @@ $(function(){
       dataType: 'json',
     })
     .done(function(messages){
-      console.log(messages);
+      // debugger;
       if (messages.length !== 0){
-      messages.forEach(function(message){
-        console.log(message);
-        var html = buildappendMessage(message);
-        $('.contents').append(html);
-      });
-    }
+        messages.forEach(function(message){
+          var html = buildappendMessage(message);
+          $('.contents').append(html);
+        });
+      }
+      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 1);
+      return false
     })
     .fail(function(){
       //alert('error')
+      console.log("test");
     })
     }
   }

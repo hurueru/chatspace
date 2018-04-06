@@ -3,7 +3,6 @@
 .chat {
   width: calc(100vw - 300px);
   margin-left: 300px;
-
   .header {
     height: 100px;
     width: calc(100vw - 300px);
@@ -74,7 +73,7 @@
   }
 
   .contents {
-    height: 810px;
+    height: calc(100vh - 200px);
     width: calc(100vw - 300px);
     background-color: #EEEEEE;
     top: 100px;

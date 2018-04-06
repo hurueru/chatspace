@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    #binding.pry
+    # binding.pry
     respond_to do |format|
       format.html
       format.json {@new_messages = @messages.where('id > ?', params[:id])}
@@ -14,10 +14,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
-
     if @message.save
-
-  #require 'byebug'; byebug
       respond_to do |format|
         format.html { redirect_to group_messages_path(@group) }
         format.json
