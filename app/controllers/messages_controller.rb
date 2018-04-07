@@ -1,16 +1,21 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group, only: [:index, :create]
+
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.html
+      format.json {@new_messages = @messages.where('id > ?', params[:id])}
+    end
   end
 
   def create
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to group_messages_path(params[:group_id]) }
+        format.html { redirect_to group_messages_path(@group) }
         format.json
       end
     else

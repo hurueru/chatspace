@@ -51,7 +51,7 @@
     }
 
     .group {
-      height: 900px;
+      height: calc(100vh - 100px);
         .group__name {
           font-size: 15px;
           color: #FFFFFF;
