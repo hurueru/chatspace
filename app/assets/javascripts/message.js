@@ -1,13 +1,7 @@
 $(function(){
   function buildappendMessage(message){
     var imageurl = `<img src="${message.image_url.url}" class="lower-message__image">`
-    $(function() {
-      if (imageurl == ""){
-        imageurl = '';
-      } else {
-        imageurl = `<img src="${message.image_url.url}" class="lower-message__image">`
-      }
-    });
+    imageurl > 0? $('${imageurl}').show(); : $('${imageurl}').hide();
 
     var html = `
     <div class="message" id= "message_main">
@@ -55,11 +49,11 @@ $(function(){
   function update(){
     var url = window.location.pathname;
     if(url.match(/\/groups\/\d\/messages/)){
-    var id = $('.upper-message').last(0).attr('id');
+    var message_id = $('.upper-message').last(0).attr('id');
     $.ajax({
       url: url,
       type: 'GET',
-      data: {id: id},
+      data: {id: message_id},
       dataType: 'json',
     })
     .done(function(messages){
