@@ -1,8 +1,6 @@
 $(function(){
   function buildappendMessage(message){
     var imageurl = `<img src="${message.image_url.url}" class="lower-message__image">`
-    // debugger;
-    // imageurl = '';
     $(function() {
       if (imageurl == ""){
         imageurl = '';
@@ -65,7 +63,6 @@ $(function(){
       dataType: 'json',
     })
     .done(function(messages){
-      // debugger;
       if (messages.length !== 0){
         messages.forEach(function(message){
           var html = buildappendMessage(message);
@@ -76,8 +73,7 @@ $(function(){
       return false
     })
     .fail(function(){
-      //alert('error')
-      console.log("test");
+      alert('error')
     })
     }
   }
