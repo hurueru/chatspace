@@ -6,7 +6,7 @@ $(function(){
       }
     var html = `
     <div class="message" id= "message_main">
-      <div class="upper-message" id='${ message.id }'>
+      <div class="upper-message" id='${message.id}'>
         <div class="upper-message__user-name">
           ${message.user_name}
         </div>
@@ -37,7 +37,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data.image_url)
       var html = buildappendMessage(data);
       $('.contents').append(html);
       $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 1);
