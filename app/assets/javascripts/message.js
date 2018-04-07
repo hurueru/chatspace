@@ -47,7 +47,7 @@ $(function(){
       $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 1);
       $('.form__message').val('')
     }).fail(function(e){
-    alert('error');
+      alert('error');
     })
     return false;
   });
@@ -73,9 +73,9 @@ $(function(){
       return false
     })
     .fail(function(){
-      alert('error')
+      alert('error');
     })
-    }
   }
-  setInterval(update, 5000);
+}
+setInterval(update, 5000);
 });
