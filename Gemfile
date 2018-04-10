@@ -55,7 +55,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'haml-rails'
   gem 'erb2haml'
-  gem 'carrierwave'
   gem 'mini_magick'
 end
 
@@ -69,3 +68,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn'
 end
+  gem 'carrierwave'
