@@ -18,3 +18,9 @@
 
 # public/uploads/message/imageはいらない
 public/
+# configディレクトリ下のファイルはGitにあげない
+
+config/secrets.yml
+
+
+config/initializers/carrierwave.rb
